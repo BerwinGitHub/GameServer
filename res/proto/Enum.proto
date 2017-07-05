@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+enum ErrorCode {
+    DEFAULT = 0; // 默认(无意义)
+    SUCCESS = 1; // 成功(没有错误)
+}

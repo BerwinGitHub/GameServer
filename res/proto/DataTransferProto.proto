@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "Enum.proto"; // 引入各种 枚举类型
+
+// 数据传输原型
+message DataTransferProto {
+    string messageName          = 1; // Message的名字
+    ErrorCode errorCode         = 2; // 错误代码sssss
+    bytes data                  = 3; // 传输的二进制数据
+}
