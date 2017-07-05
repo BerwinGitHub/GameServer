@@ -1,3 +1,4 @@
+option java_package = "com.berwin.proto";// package 包路径
 option java_outer_classname = "PersonEntity";//生成的数据访问类的类名  
 message Person {  
   required int32 id = 1;//同上  
