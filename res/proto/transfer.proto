@@ -14,7 +14,28 @@ message TransferData {
     bytes data                  = 3; // 传输的二进制数据
 }
 
+message User {
+	int32 userId = 1;
+	string userName = 2;
+}
+
 message Login {
-    string name = 1;
-    string passwd = 2;
+	User u = 1;
+}
+
+enum MatchStatus {
+	START = 0;		// 开始匹配
+	MATCHED = 1;	// 匹配到
+	TIMEOUT = 2;	// 匹配超时
+}
+
+message Match {
+	int32 type = 1; // 匹配的类型
+	MatchStatus status = 2; // 匹配的状态
+	User enemy = 3;	// 主场用户
+}
+
+message Gaming {
+	int32 ex = 1;
+	int32 ey = 2;
 }
