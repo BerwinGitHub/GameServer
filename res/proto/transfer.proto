@@ -1,38 +1,41 @@
 syntax = "proto3";
 option java_package = "com.berwin.proto"; 
-option java_outer_classname = "Protobufs"; 
+option java_outer_classname = "Protobufs";
 
-enum ErrorCode {
-    DEFAULT = 0; // 默认(无意义)
-    SUCCESS = 1; // 成功(没有错误)
+// repeated string names = 1;
+
+enum Action {
+	ACTION_CONNECT		=	0;	// socket连接
+	ACTION_CLOSED		=	1;	// socket关闭
+	ACTION_LOGIN		=	2;	// 登录
+	ACTION_MATCH		=	3;	// 匹配
+	ACTION_MATCH_CANCEL	=	4;	// 匹配取消
+	ACTION_MATCH_FAILED	=	5;	// 匹配失败
+	ACTION_MATCHED		=	6;	// 匹配到了
+	ACTION_GAMING		=	7;	// 游戏中
+	ACTION_GAMEND		=	8;	// 游戏结束
 }
 
 // 数据传输原型
 message TransferData {
-    string messageName          = 1; // Message的名字
-    ErrorCode errorCode         = 2; // 错误代码sssss
-    bytes data                  = 3; // 传输的二进制数据
+	Action	action		= 1; // 数据类型(动作)
+    bytes data			= 2; // 传输的二进制数据
 }
 
 message User {
-	int32 userId = 1;
-	string userName = 2;
+	int32 userId	= 1;
+	string userName	= 2;
+	string passWord = 3;
+	int32 score		= 4;
+	bool verify		= 5;
 }
 
 message Login {
-	User u = 1;
-}
-
-enum MatchStatus {
-	START = 0;		// 开始匹配
-	MATCHED = 1;	// 匹配到
-	TIMEOUT = 2;	// 匹配超时
+	User user = 1;		// 用户信息
 }
 
 message Match {
-	int32 type = 1; // 匹配的类型
-	MatchStatus status = 2; // 匹配的状态
-	User enemy = 3;	// 主场用户
+	User enemy = 1;	// 敌人
 }
 
 message Gaming {

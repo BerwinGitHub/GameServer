@@ -15,45 +15,157 @@ public final class Protobufs {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
-   * Protobuf enum {@code ErrorCode}
+   * Protobuf enum {@code Action}
    */
-  public enum ErrorCode
+  public enum Action
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <pre>
-     * 默认(无意义)
+     * socket连接
      * </pre>
      *
-     * <code>DEFAULT = 0;</code>
+     * <code>ACTION_CONNECT = 0;</code>
      */
-    DEFAULT(0),
+    ACTION_CONNECT(0),
     /**
      * <pre>
-     * 成功(没有错误)
+     * socket关闭
      * </pre>
      *
-     * <code>SUCCESS = 1;</code>
+     * <code>ACTION_CLOSED = 1;</code>
      */
-    SUCCESS(1),
+    ACTION_CLOSED(1),
+    /**
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>ACTION_LOGIN = 2;</code>
+     */
+    ACTION_LOGIN(2),
+    /**
+     * <pre>
+     * 匹配
+     * </pre>
+     *
+     * <code>ACTION_MATCH = 3;</code>
+     */
+    ACTION_MATCH(3),
+    /**
+     * <pre>
+     * 匹配取消
+     * </pre>
+     *
+     * <code>ACTION_MATCH_CANCEL = 4;</code>
+     */
+    ACTION_MATCH_CANCEL(4),
+    /**
+     * <pre>
+     * 匹配失败
+     * </pre>
+     *
+     * <code>ACTION_MATCH_FAILED = 5;</code>
+     */
+    ACTION_MATCH_FAILED(5),
+    /**
+     * <pre>
+     * 匹配到了
+     * </pre>
+     *
+     * <code>ACTION_MATCHED = 6;</code>
+     */
+    ACTION_MATCHED(6),
+    /**
+     * <pre>
+     * 游戏中
+     * </pre>
+     *
+     * <code>ACTION_GAMING = 7;</code>
+     */
+    ACTION_GAMING(7),
+    /**
+     * <pre>
+     * 游戏结束
+     * </pre>
+     *
+     * <code>ACTION_GAMEND = 8;</code>
+     */
+    ACTION_GAMEND(8),
     UNRECOGNIZED(-1),
     ;
 
     /**
      * <pre>
-     * 默认(无意义)
+     * socket连接
      * </pre>
      *
-     * <code>DEFAULT = 0;</code>
+     * <code>ACTION_CONNECT = 0;</code>
      */
-    public static final int DEFAULT_VALUE = 0;
+    public static final int ACTION_CONNECT_VALUE = 0;
     /**
      * <pre>
-     * 成功(没有错误)
+     * socket关闭
      * </pre>
      *
-     * <code>SUCCESS = 1;</code>
+     * <code>ACTION_CLOSED = 1;</code>
      */
-    public static final int SUCCESS_VALUE = 1;
+    public static final int ACTION_CLOSED_VALUE = 1;
+    /**
+     * <pre>
+     * 登录
+     * </pre>
+     *
+     * <code>ACTION_LOGIN = 2;</code>
+     */
+    public static final int ACTION_LOGIN_VALUE = 2;
+    /**
+     * <pre>
+     * 匹配
+     * </pre>
+     *
+     * <code>ACTION_MATCH = 3;</code>
+     */
+    public static final int ACTION_MATCH_VALUE = 3;
+    /**
+     * <pre>
+     * 匹配取消
+     * </pre>
+     *
+     * <code>ACTION_MATCH_CANCEL = 4;</code>
+     */
+    public static final int ACTION_MATCH_CANCEL_VALUE = 4;
+    /**
+     * <pre>
+     * 匹配失败
+     * </pre>
+     *
+     * <code>ACTION_MATCH_FAILED = 5;</code>
+     */
+    public static final int ACTION_MATCH_FAILED_VALUE = 5;
+    /**
+     * <pre>
+     * 匹配到了
+     * </pre>
+     *
+     * <code>ACTION_MATCHED = 6;</code>
+     */
+    public static final int ACTION_MATCHED_VALUE = 6;
+    /**
+     * <pre>
+     * 游戏中
+     * </pre>
+     *
+     * <code>ACTION_GAMING = 7;</code>
+     */
+    public static final int ACTION_GAMING_VALUE = 7;
+    /**
+     * <pre>
+     * 游戏结束
+     * </pre>
+     *
+     * <code>ACTION_GAMEND = 8;</code>
+     */
+    public static final int ACTION_GAMEND_VALUE = 8;
 
 
     public final int getNumber() {
@@ -68,27 +180,34 @@ public final class Protobufs {
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static ErrorCode valueOf(int value) {
+    public static Action valueOf(int value) {
       return forNumber(value);
     }
 
-    public static ErrorCode forNumber(int value) {
+    public static Action forNumber(int value) {
       switch (value) {
-        case 0: return DEFAULT;
-        case 1: return SUCCESS;
+        case 0: return ACTION_CONNECT;
+        case 1: return ACTION_CLOSED;
+        case 2: return ACTION_LOGIN;
+        case 3: return ACTION_MATCH;
+        case 4: return ACTION_MATCH_CANCEL;
+        case 5: return ACTION_MATCH_FAILED;
+        case 6: return ACTION_MATCHED;
+        case 7: return ACTION_GAMING;
+        case 8: return ACTION_GAMEND;
         default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<ErrorCode>
+    public static com.google.protobuf.Internal.EnumLiteMap<Action>
         internalGetValueMap() {
       return internalValueMap;
     }
     private static final com.google.protobuf.Internal.EnumLiteMap<
-        ErrorCode> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ErrorCode>() {
-            public ErrorCode findValueByNumber(int number) {
-              return ErrorCode.forNumber(number);
+        Action> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Action>() {
+            public Action findValueByNumber(int number) {
+              return Action.forNumber(number);
             }
           };
 
@@ -105,9 +224,9 @@ public final class Protobufs {
       return com.berwin.proto.Protobufs.getDescriptor().getEnumTypes().get(0);
     }
 
-    private static final ErrorCode[] VALUES = values();
+    private static final Action[] VALUES = values();
 
-    public static ErrorCode valueOf(
+    public static Action valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
@@ -121,142 +240,11 @@ public final class Protobufs {
 
     private final int value;
 
-    private ErrorCode(int value) {
+    private Action(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:ErrorCode)
-  }
-
-  /**
-   * Protobuf enum {@code MatchStatus}
-   */
-  public enum MatchStatus
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <pre>
-     * 开始匹配
-     * </pre>
-     *
-     * <code>START = 0;</code>
-     */
-    START(0),
-    /**
-     * <pre>
-     * 匹配到
-     * </pre>
-     *
-     * <code>MATCHED = 1;</code>
-     */
-    MATCHED(1),
-    /**
-     * <pre>
-     * 匹配超时
-     * </pre>
-     *
-     * <code>TIMEOUT = 2;</code>
-     */
-    TIMEOUT(2),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <pre>
-     * 开始匹配
-     * </pre>
-     *
-     * <code>START = 0;</code>
-     */
-    public static final int START_VALUE = 0;
-    /**
-     * <pre>
-     * 匹配到
-     * </pre>
-     *
-     * <code>MATCHED = 1;</code>
-     */
-    public static final int MATCHED_VALUE = 1;
-    /**
-     * <pre>
-     * 匹配超时
-     * </pre>
-     *
-     * <code>TIMEOUT = 2;</code>
-     */
-    public static final int TIMEOUT_VALUE = 2;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static MatchStatus valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static MatchStatus forNumber(int value) {
-      switch (value) {
-        case 0: return START;
-        case 1: return MATCHED;
-        case 2: return TIMEOUT;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<MatchStatus>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        MatchStatus> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<MatchStatus>() {
-            public MatchStatus findValueByNumber(int number) {
-              return MatchStatus.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.berwin.proto.Protobufs.getDescriptor().getEnumTypes().get(1);
-    }
-
-    private static final MatchStatus[] VALUES = values();
-
-    public static MatchStatus valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private MatchStatus(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:MatchStatus)
+    // @@protoc_insertion_point(enum_scope:Action)
   }
 
   public interface TransferDataOrBuilder extends
@@ -265,45 +253,27 @@ public final class Protobufs {
 
     /**
      * <pre>
-     * Message的名字
+     * 数据类型(动作)
      * </pre>
      *
-     * <code>string messageName = 1;</code>
+     * <code>.Action action = 1;</code>
      */
-    java.lang.String getMessageName();
+    int getActionValue();
     /**
      * <pre>
-     * Message的名字
+     * 数据类型(动作)
      * </pre>
      *
-     * <code>string messageName = 1;</code>
+     * <code>.Action action = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getMessageNameBytes();
-
-    /**
-     * <pre>
-     * 错误代码sssss
-     * </pre>
-     *
-     * <code>.ErrorCode errorCode = 2;</code>
-     */
-    int getErrorCodeValue();
-    /**
-     * <pre>
-     * 错误代码sssss
-     * </pre>
-     *
-     * <code>.ErrorCode errorCode = 2;</code>
-     */
-    com.berwin.proto.Protobufs.ErrorCode getErrorCode();
+    com.berwin.proto.Protobufs.Action getAction();
 
     /**
      * <pre>
      * 传输的二进制数据
      * </pre>
      *
-     * <code>bytes data = 3;</code>
+     * <code>bytes data = 2;</code>
      */
     com.google.protobuf.ByteString getData();
   }
@@ -323,8 +293,7 @@ public final class Protobufs {
       super(builder);
     }
     private TransferData() {
-      messageName_ = "";
-      errorCode_ = 0;
+      action_ = 0;
       data_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -353,19 +322,13 @@ public final class Protobufs {
               }
               break;
             }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              messageName_ = s;
-              break;
-            }
-            case 16: {
+            case 8: {
               int rawValue = input.readEnum();
 
-              errorCode_ = rawValue;
+              action_ = rawValue;
               break;
             }
-            case 26: {
+            case 18: {
 
               data_ = input.readBytes();
               break;
@@ -393,80 +356,38 @@ public final class Protobufs {
               com.berwin.proto.Protobufs.TransferData.class, com.berwin.proto.Protobufs.TransferData.Builder.class);
     }
 
-    public static final int MESSAGENAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object messageName_;
+    public static final int ACTION_FIELD_NUMBER = 1;
+    private int action_;
     /**
      * <pre>
-     * Message的名字
+     * 数据类型(动作)
      * </pre>
      *
-     * <code>string messageName = 1;</code>
+     * <code>.Action action = 1;</code>
      */
-    public java.lang.String getMessageName() {
-      java.lang.Object ref = messageName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        messageName_ = s;
-        return s;
-      }
+    public int getActionValue() {
+      return action_;
     }
     /**
      * <pre>
-     * Message的名字
+     * 数据类型(动作)
      * </pre>
      *
-     * <code>string messageName = 1;</code>
+     * <code>.Action action = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getMessageNameBytes() {
-      java.lang.Object ref = messageName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        messageName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.berwin.proto.Protobufs.Action getAction() {
+      com.berwin.proto.Protobufs.Action result = com.berwin.proto.Protobufs.Action.valueOf(action_);
+      return result == null ? com.berwin.proto.Protobufs.Action.UNRECOGNIZED : result;
     }
 
-    public static final int ERRORCODE_FIELD_NUMBER = 2;
-    private int errorCode_;
-    /**
-     * <pre>
-     * 错误代码sssss
-     * </pre>
-     *
-     * <code>.ErrorCode errorCode = 2;</code>
-     */
-    public int getErrorCodeValue() {
-      return errorCode_;
-    }
-    /**
-     * <pre>
-     * 错误代码sssss
-     * </pre>
-     *
-     * <code>.ErrorCode errorCode = 2;</code>
-     */
-    public com.berwin.proto.Protobufs.ErrorCode getErrorCode() {
-      com.berwin.proto.Protobufs.ErrorCode result = com.berwin.proto.Protobufs.ErrorCode.valueOf(errorCode_);
-      return result == null ? com.berwin.proto.Protobufs.ErrorCode.UNRECOGNIZED : result;
-    }
-
-    public static final int DATA_FIELD_NUMBER = 3;
+    public static final int DATA_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString data_;
     /**
      * <pre>
      * 传输的二进制数据
      * </pre>
      *
-     * <code>bytes data = 3;</code>
+     * <code>bytes data = 2;</code>
      */
     public com.google.protobuf.ByteString getData() {
       return data_;
@@ -484,14 +405,11 @@ public final class Protobufs {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getMessageNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, messageName_);
-      }
-      if (errorCode_ != com.berwin.proto.Protobufs.ErrorCode.DEFAULT.getNumber()) {
-        output.writeEnum(2, errorCode_);
+      if (action_ != com.berwin.proto.Protobufs.Action.ACTION_CONNECT.getNumber()) {
+        output.writeEnum(1, action_);
       }
       if (!data_.isEmpty()) {
-        output.writeBytes(3, data_);
+        output.writeBytes(2, data_);
       }
     }
 
@@ -500,16 +418,13 @@ public final class Protobufs {
       if (size != -1) return size;
 
       size = 0;
-      if (!getMessageNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, messageName_);
-      }
-      if (errorCode_ != com.berwin.proto.Protobufs.ErrorCode.DEFAULT.getNumber()) {
+      if (action_ != com.berwin.proto.Protobufs.Action.ACTION_CONNECT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, errorCode_);
+          .computeEnumSize(1, action_);
       }
       if (!data_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, data_);
+          .computeBytesSize(2, data_);
       }
       memoizedSize = size;
       return size;
@@ -527,9 +442,7 @@ public final class Protobufs {
       com.berwin.proto.Protobufs.TransferData other = (com.berwin.proto.Protobufs.TransferData) obj;
 
       boolean result = true;
-      result = result && getMessageName()
-          .equals(other.getMessageName());
-      result = result && errorCode_ == other.errorCode_;
+      result = result && action_ == other.action_;
       result = result && getData()
           .equals(other.getData());
       return result;
@@ -542,10 +455,8 @@ public final class Protobufs {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MESSAGENAME_FIELD_NUMBER;
-      hash = (53 * hash) + getMessageName().hashCode();
-      hash = (37 * hash) + ERRORCODE_FIELD_NUMBER;
-      hash = (53 * hash) + errorCode_;
+      hash = (37 * hash) + ACTION_FIELD_NUMBER;
+      hash = (53 * hash) + action_;
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -681,9 +592,7 @@ public final class Protobufs {
       }
       public Builder clear() {
         super.clear();
-        messageName_ = "";
-
-        errorCode_ = 0;
+        action_ = 0;
 
         data_ = com.google.protobuf.ByteString.EMPTY;
 
@@ -709,8 +618,7 @@ public final class Protobufs {
 
       public com.berwin.proto.Protobufs.TransferData buildPartial() {
         com.berwin.proto.Protobufs.TransferData result = new com.berwin.proto.Protobufs.TransferData(this);
-        result.messageName_ = messageName_;
-        result.errorCode_ = errorCode_;
+        result.action_ = action_;
         result.data_ = data_;
         onBuilt();
         return result;
@@ -753,12 +661,8 @@ public final class Protobufs {
 
       public Builder mergeFrom(com.berwin.proto.Protobufs.TransferData other) {
         if (other == com.berwin.proto.Protobufs.TransferData.getDefaultInstance()) return this;
-        if (!other.getMessageName().isEmpty()) {
-          messageName_ = other.messageName_;
-          onChanged();
-        }
-        if (other.errorCode_ != 0) {
-          setErrorCodeValue(other.getErrorCodeValue());
+        if (other.action_ != 0) {
+          setActionValue(other.getActionValue());
         }
         if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
           setData(other.getData());
@@ -789,155 +693,66 @@ public final class Protobufs {
         return this;
       }
 
-      private java.lang.Object messageName_ = "";
+      private int action_ = 0;
       /**
        * <pre>
-       * Message的名字
+       * 数据类型(动作)
        * </pre>
        *
-       * <code>string messageName = 1;</code>
+       * <code>.Action action = 1;</code>
        */
-      public java.lang.String getMessageName() {
-        java.lang.Object ref = messageName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          messageName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public int getActionValue() {
+        return action_;
       }
       /**
        * <pre>
-       * Message的名字
+       * 数据类型(动作)
        * </pre>
        *
-       * <code>string messageName = 1;</code>
+       * <code>.Action action = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getMessageNameBytes() {
-        java.lang.Object ref = messageName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          messageName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Message的名字
-       * </pre>
-       *
-       * <code>string messageName = 1;</code>
-       */
-      public Builder setMessageName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        messageName_ = value;
+      public Builder setActionValue(int value) {
+        action_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Message的名字
+       * 数据类型(动作)
        * </pre>
        *
-       * <code>string messageName = 1;</code>
+       * <code>.Action action = 1;</code>
        */
-      public Builder clearMessageName() {
-        
-        messageName_ = getDefaultInstance().getMessageName();
-        onChanged();
-        return this;
+      public com.berwin.proto.Protobufs.Action getAction() {
+        com.berwin.proto.Protobufs.Action result = com.berwin.proto.Protobufs.Action.valueOf(action_);
+        return result == null ? com.berwin.proto.Protobufs.Action.UNRECOGNIZED : result;
       }
       /**
        * <pre>
-       * Message的名字
+       * 数据类型(动作)
        * </pre>
        *
-       * <code>string messageName = 1;</code>
+       * <code>.Action action = 1;</code>
        */
-      public Builder setMessageNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        messageName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int errorCode_ = 0;
-      /**
-       * <pre>
-       * 错误代码sssss
-       * </pre>
-       *
-       * <code>.ErrorCode errorCode = 2;</code>
-       */
-      public int getErrorCodeValue() {
-        return errorCode_;
-      }
-      /**
-       * <pre>
-       * 错误代码sssss
-       * </pre>
-       *
-       * <code>.ErrorCode errorCode = 2;</code>
-       */
-      public Builder setErrorCodeValue(int value) {
-        errorCode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 错误代码sssss
-       * </pre>
-       *
-       * <code>.ErrorCode errorCode = 2;</code>
-       */
-      public com.berwin.proto.Protobufs.ErrorCode getErrorCode() {
-        com.berwin.proto.Protobufs.ErrorCode result = com.berwin.proto.Protobufs.ErrorCode.valueOf(errorCode_);
-        return result == null ? com.berwin.proto.Protobufs.ErrorCode.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * 错误代码sssss
-       * </pre>
-       *
-       * <code>.ErrorCode errorCode = 2;</code>
-       */
-      public Builder setErrorCode(com.berwin.proto.Protobufs.ErrorCode value) {
+      public Builder setAction(com.berwin.proto.Protobufs.Action value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        errorCode_ = value.getNumber();
+        action_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 错误代码sssss
+       * 数据类型(动作)
        * </pre>
        *
-       * <code>.ErrorCode errorCode = 2;</code>
+       * <code>.Action action = 1;</code>
        */
-      public Builder clearErrorCode() {
+      public Builder clearAction() {
         
-        errorCode_ = 0;
+        action_ = 0;
         onChanged();
         return this;
       }
@@ -948,7 +763,7 @@ public final class Protobufs {
        * 传输的二进制数据
        * </pre>
        *
-       * <code>bytes data = 3;</code>
+       * <code>bytes data = 2;</code>
        */
       public com.google.protobuf.ByteString getData() {
         return data_;
@@ -958,7 +773,7 @@ public final class Protobufs {
        * 传输的二进制数据
        * </pre>
        *
-       * <code>bytes data = 3;</code>
+       * <code>bytes data = 2;</code>
        */
       public Builder setData(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -974,7 +789,7 @@ public final class Protobufs {
        * 传输的二进制数据
        * </pre>
        *
-       * <code>bytes data = 3;</code>
+       * <code>bytes data = 2;</code>
        */
       public Builder clearData() {
         
@@ -1049,6 +864,26 @@ public final class Protobufs {
      */
     com.google.protobuf.ByteString
         getUserNameBytes();
+
+    /**
+     * <code>string passWord = 3;</code>
+     */
+    java.lang.String getPassWord();
+    /**
+     * <code>string passWord = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getPassWordBytes();
+
+    /**
+     * <code>int32 score = 4;</code>
+     */
+    int getScore();
+
+    /**
+     * <code>bool verify = 5;</code>
+     */
+    boolean getVerify();
   }
   /**
    * Protobuf type {@code User}
@@ -1064,6 +899,9 @@ public final class Protobufs {
     private User() {
       userId_ = 0;
       userName_ = "";
+      passWord_ = "";
+      score_ = 0;
+      verify_ = false;
     }
 
     @java.lang.Override
@@ -1100,6 +938,22 @@ public final class Protobufs {
               java.lang.String s = input.readStringRequireUtf8();
 
               userName_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              passWord_ = s;
+              break;
+            }
+            case 32: {
+
+              score_ = input.readInt32();
+              break;
+            }
+            case 40: {
+
+              verify_ = input.readBool();
               break;
             }
           }
@@ -1168,6 +1022,58 @@ public final class Protobufs {
       }
     }
 
+    public static final int PASSWORD_FIELD_NUMBER = 3;
+    private volatile java.lang.Object passWord_;
+    /**
+     * <code>string passWord = 3;</code>
+     */
+    public java.lang.String getPassWord() {
+      java.lang.Object ref = passWord_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        passWord_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string passWord = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPassWordBytes() {
+      java.lang.Object ref = passWord_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        passWord_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SCORE_FIELD_NUMBER = 4;
+    private int score_;
+    /**
+     * <code>int32 score = 4;</code>
+     */
+    public int getScore() {
+      return score_;
+    }
+
+    public static final int VERIFY_FIELD_NUMBER = 5;
+    private boolean verify_;
+    /**
+     * <code>bool verify = 5;</code>
+     */
+    public boolean getVerify() {
+      return verify_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1186,6 +1092,15 @@ public final class Protobufs {
       if (!getUserNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userName_);
       }
+      if (!getPassWordBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, passWord_);
+      }
+      if (score_ != 0) {
+        output.writeInt32(4, score_);
+      }
+      if (verify_ != false) {
+        output.writeBool(5, verify_);
+      }
     }
 
     public int getSerializedSize() {
@@ -1199,6 +1114,17 @@ public final class Protobufs {
       }
       if (!getUserNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userName_);
+      }
+      if (!getPassWordBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, passWord_);
+      }
+      if (score_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, score_);
+      }
+      if (verify_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, verify_);
       }
       memoizedSize = size;
       return size;
@@ -1220,6 +1146,12 @@ public final class Protobufs {
           == other.getUserId());
       result = result && getUserName()
           .equals(other.getUserName());
+      result = result && getPassWord()
+          .equals(other.getPassWord());
+      result = result && (getScore()
+          == other.getScore());
+      result = result && (getVerify()
+          == other.getVerify());
       return result;
     }
 
@@ -1234,6 +1166,13 @@ public final class Protobufs {
       hash = (53 * hash) + getUserId();
       hash = (37 * hash) + USERNAME_FIELD_NUMBER;
       hash = (53 * hash) + getUserName().hashCode();
+      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getPassWord().hashCode();
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getScore();
+      hash = (37 * hash) + VERIFY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getVerify());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1367,6 +1306,12 @@ public final class Protobufs {
 
         userName_ = "";
 
+        passWord_ = "";
+
+        score_ = 0;
+
+        verify_ = false;
+
         return this;
       }
 
@@ -1391,6 +1336,9 @@ public final class Protobufs {
         com.berwin.proto.Protobufs.User result = new com.berwin.proto.Protobufs.User(this);
         result.userId_ = userId_;
         result.userName_ = userName_;
+        result.passWord_ = passWord_;
+        result.score_ = score_;
+        result.verify_ = verify_;
         onBuilt();
         return result;
       }
@@ -1438,6 +1386,16 @@ public final class Protobufs {
         if (!other.getUserName().isEmpty()) {
           userName_ = other.userName_;
           onChanged();
+        }
+        if (!other.getPassWord().isEmpty()) {
+          passWord_ = other.passWord_;
+          onChanged();
+        }
+        if (other.getScore() != 0) {
+          setScore(other.getScore());
+        }
+        if (other.getVerify() != false) {
+          setVerify(other.getVerify());
         }
         onChanged();
         return this;
@@ -1559,6 +1517,127 @@ public final class Protobufs {
         onChanged();
         return this;
       }
+
+      private java.lang.Object passWord_ = "";
+      /**
+       * <code>string passWord = 3;</code>
+       */
+      public java.lang.String getPassWord() {
+        java.lang.Object ref = passWord_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          passWord_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string passWord = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPassWordBytes() {
+        java.lang.Object ref = passWord_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          passWord_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string passWord = 3;</code>
+       */
+      public Builder setPassWord(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        passWord_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string passWord = 3;</code>
+       */
+      public Builder clearPassWord() {
+        
+        passWord_ = getDefaultInstance().getPassWord();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string passWord = 3;</code>
+       */
+      public Builder setPassWordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        passWord_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int score_ ;
+      /**
+       * <code>int32 score = 4;</code>
+       */
+      public int getScore() {
+        return score_;
+      }
+      /**
+       * <code>int32 score = 4;</code>
+       */
+      public Builder setScore(int value) {
+        
+        score_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 score = 4;</code>
+       */
+      public Builder clearScore() {
+        
+        score_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean verify_ ;
+      /**
+       * <code>bool verify = 5;</code>
+       */
+      public boolean getVerify() {
+        return verify_;
+      }
+      /**
+       * <code>bool verify = 5;</code>
+       */
+      public Builder setVerify(boolean value) {
+        
+        verify_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool verify = 5;</code>
+       */
+      public Builder clearVerify() {
+        
+        verify_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1613,17 +1692,29 @@ public final class Protobufs {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.User u = 1;</code>
+     * <pre>
+     * 用户信息
+     * </pre>
+     *
+     * <code>.User user = 1;</code>
      */
-    boolean hasU();
+    boolean hasUser();
     /**
-     * <code>.User u = 1;</code>
+     * <pre>
+     * 用户信息
+     * </pre>
+     *
+     * <code>.User user = 1;</code>
      */
-    com.berwin.proto.Protobufs.User getU();
+    com.berwin.proto.Protobufs.User getUser();
     /**
-     * <code>.User u = 1;</code>
+     * <pre>
+     * 用户信息
+     * </pre>
+     *
+     * <code>.User user = 1;</code>
      */
-    com.berwin.proto.Protobufs.UserOrBuilder getUOrBuilder();
+    com.berwin.proto.Protobufs.UserOrBuilder getUserOrBuilder();
   }
   /**
    * Protobuf type {@code Login}
@@ -1666,13 +1757,13 @@ public final class Protobufs {
             }
             case 10: {
               com.berwin.proto.Protobufs.User.Builder subBuilder = null;
-              if (u_ != null) {
-                subBuilder = u_.toBuilder();
+              if (user_ != null) {
+                subBuilder = user_.toBuilder();
               }
-              u_ = input.readMessage(com.berwin.proto.Protobufs.User.parser(), extensionRegistry);
+              user_ = input.readMessage(com.berwin.proto.Protobufs.User.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(u_);
-                u_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(user_);
+                user_ = subBuilder.buildPartial();
               }
 
               break;
@@ -1700,25 +1791,37 @@ public final class Protobufs {
               com.berwin.proto.Protobufs.Login.class, com.berwin.proto.Protobufs.Login.Builder.class);
     }
 
-    public static final int U_FIELD_NUMBER = 1;
-    private com.berwin.proto.Protobufs.User u_;
+    public static final int USER_FIELD_NUMBER = 1;
+    private com.berwin.proto.Protobufs.User user_;
     /**
-     * <code>.User u = 1;</code>
+     * <pre>
+     * 用户信息
+     * </pre>
+     *
+     * <code>.User user = 1;</code>
      */
-    public boolean hasU() {
-      return u_ != null;
+    public boolean hasUser() {
+      return user_ != null;
     }
     /**
-     * <code>.User u = 1;</code>
+     * <pre>
+     * 用户信息
+     * </pre>
+     *
+     * <code>.User user = 1;</code>
      */
-    public com.berwin.proto.Protobufs.User getU() {
-      return u_ == null ? com.berwin.proto.Protobufs.User.getDefaultInstance() : u_;
+    public com.berwin.proto.Protobufs.User getUser() {
+      return user_ == null ? com.berwin.proto.Protobufs.User.getDefaultInstance() : user_;
     }
     /**
-     * <code>.User u = 1;</code>
+     * <pre>
+     * 用户信息
+     * </pre>
+     *
+     * <code>.User user = 1;</code>
      */
-    public com.berwin.proto.Protobufs.UserOrBuilder getUOrBuilder() {
-      return getU();
+    public com.berwin.proto.Protobufs.UserOrBuilder getUserOrBuilder() {
+      return getUser();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1733,8 +1836,8 @@ public final class Protobufs {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (u_ != null) {
-        output.writeMessage(1, getU());
+      if (user_ != null) {
+        output.writeMessage(1, getUser());
       }
     }
 
@@ -1743,9 +1846,9 @@ public final class Protobufs {
       if (size != -1) return size;
 
       size = 0;
-      if (u_ != null) {
+      if (user_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getU());
+          .computeMessageSize(1, getUser());
       }
       memoizedSize = size;
       return size;
@@ -1763,10 +1866,10 @@ public final class Protobufs {
       com.berwin.proto.Protobufs.Login other = (com.berwin.proto.Protobufs.Login) obj;
 
       boolean result = true;
-      result = result && (hasU() == other.hasU());
-      if (hasU()) {
-        result = result && getU()
-            .equals(other.getU());
+      result = result && (hasUser() == other.hasUser());
+      if (hasUser()) {
+        result = result && getUser()
+            .equals(other.getUser());
       }
       return result;
     }
@@ -1778,9 +1881,9 @@ public final class Protobufs {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasU()) {
-        hash = (37 * hash) + U_FIELD_NUMBER;
-        hash = (53 * hash) + getU().hashCode();
+      if (hasUser()) {
+        hash = (37 * hash) + USER_FIELD_NUMBER;
+        hash = (53 * hash) + getUser().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1911,11 +2014,11 @@ public final class Protobufs {
       }
       public Builder clear() {
         super.clear();
-        if (uBuilder_ == null) {
-          u_ = null;
+        if (userBuilder_ == null) {
+          user_ = null;
         } else {
-          u_ = null;
-          uBuilder_ = null;
+          user_ = null;
+          userBuilder_ = null;
         }
         return this;
       }
@@ -1939,10 +2042,10 @@ public final class Protobufs {
 
       public com.berwin.proto.Protobufs.Login buildPartial() {
         com.berwin.proto.Protobufs.Login result = new com.berwin.proto.Protobufs.Login(this);
-        if (uBuilder_ == null) {
-          result.u_ = u_;
+        if (userBuilder_ == null) {
+          result.user_ = user_;
         } else {
-          result.u_ = uBuilder_.build();
+          result.user_ = userBuilder_.build();
         }
         onBuilt();
         return result;
@@ -1985,8 +2088,8 @@ public final class Protobufs {
 
       public Builder mergeFrom(com.berwin.proto.Protobufs.Login other) {
         if (other == com.berwin.proto.Protobufs.Login.getDefaultInstance()) return this;
-        if (other.hasU()) {
-          mergeU(other.getU());
+        if (other.hasUser()) {
+          mergeUser(other.getUser());
         }
         onChanged();
         return this;
@@ -2014,121 +2117,157 @@ public final class Protobufs {
         return this;
       }
 
-      private com.berwin.proto.Protobufs.User u_ = null;
+      private com.berwin.proto.Protobufs.User user_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.berwin.proto.Protobufs.User, com.berwin.proto.Protobufs.User.Builder, com.berwin.proto.Protobufs.UserOrBuilder> uBuilder_;
+          com.berwin.proto.Protobufs.User, com.berwin.proto.Protobufs.User.Builder, com.berwin.proto.Protobufs.UserOrBuilder> userBuilder_;
       /**
-       * <code>.User u = 1;</code>
+       * <pre>
+       * 用户信息
+       * </pre>
+       *
+       * <code>.User user = 1;</code>
        */
-      public boolean hasU() {
-        return uBuilder_ != null || u_ != null;
+      public boolean hasUser() {
+        return userBuilder_ != null || user_ != null;
       }
       /**
-       * <code>.User u = 1;</code>
+       * <pre>
+       * 用户信息
+       * </pre>
+       *
+       * <code>.User user = 1;</code>
        */
-      public com.berwin.proto.Protobufs.User getU() {
-        if (uBuilder_ == null) {
-          return u_ == null ? com.berwin.proto.Protobufs.User.getDefaultInstance() : u_;
+      public com.berwin.proto.Protobufs.User getUser() {
+        if (userBuilder_ == null) {
+          return user_ == null ? com.berwin.proto.Protobufs.User.getDefaultInstance() : user_;
         } else {
-          return uBuilder_.getMessage();
+          return userBuilder_.getMessage();
         }
       }
       /**
-       * <code>.User u = 1;</code>
+       * <pre>
+       * 用户信息
+       * </pre>
+       *
+       * <code>.User user = 1;</code>
        */
-      public Builder setU(com.berwin.proto.Protobufs.User value) {
-        if (uBuilder_ == null) {
+      public Builder setUser(com.berwin.proto.Protobufs.User value) {
+        if (userBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          u_ = value;
+          user_ = value;
           onChanged();
         } else {
-          uBuilder_.setMessage(value);
+          userBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.User u = 1;</code>
+       * <pre>
+       * 用户信息
+       * </pre>
+       *
+       * <code>.User user = 1;</code>
        */
-      public Builder setU(
+      public Builder setUser(
           com.berwin.proto.Protobufs.User.Builder builderForValue) {
-        if (uBuilder_ == null) {
-          u_ = builderForValue.build();
+        if (userBuilder_ == null) {
+          user_ = builderForValue.build();
           onChanged();
         } else {
-          uBuilder_.setMessage(builderForValue.build());
+          userBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.User u = 1;</code>
+       * <pre>
+       * 用户信息
+       * </pre>
+       *
+       * <code>.User user = 1;</code>
        */
-      public Builder mergeU(com.berwin.proto.Protobufs.User value) {
-        if (uBuilder_ == null) {
-          if (u_ != null) {
-            u_ =
-              com.berwin.proto.Protobufs.User.newBuilder(u_).mergeFrom(value).buildPartial();
+      public Builder mergeUser(com.berwin.proto.Protobufs.User value) {
+        if (userBuilder_ == null) {
+          if (user_ != null) {
+            user_ =
+              com.berwin.proto.Protobufs.User.newBuilder(user_).mergeFrom(value).buildPartial();
           } else {
-            u_ = value;
+            user_ = value;
           }
           onChanged();
         } else {
-          uBuilder_.mergeFrom(value);
+          userBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.User u = 1;</code>
+       * <pre>
+       * 用户信息
+       * </pre>
+       *
+       * <code>.User user = 1;</code>
        */
-      public Builder clearU() {
-        if (uBuilder_ == null) {
-          u_ = null;
+      public Builder clearUser() {
+        if (userBuilder_ == null) {
+          user_ = null;
           onChanged();
         } else {
-          u_ = null;
-          uBuilder_ = null;
+          user_ = null;
+          userBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.User u = 1;</code>
+       * <pre>
+       * 用户信息
+       * </pre>
+       *
+       * <code>.User user = 1;</code>
        */
-      public com.berwin.proto.Protobufs.User.Builder getUBuilder() {
+      public com.berwin.proto.Protobufs.User.Builder getUserBuilder() {
         
         onChanged();
-        return getUFieldBuilder().getBuilder();
+        return getUserFieldBuilder().getBuilder();
       }
       /**
-       * <code>.User u = 1;</code>
+       * <pre>
+       * 用户信息
+       * </pre>
+       *
+       * <code>.User user = 1;</code>
        */
-      public com.berwin.proto.Protobufs.UserOrBuilder getUOrBuilder() {
-        if (uBuilder_ != null) {
-          return uBuilder_.getMessageOrBuilder();
+      public com.berwin.proto.Protobufs.UserOrBuilder getUserOrBuilder() {
+        if (userBuilder_ != null) {
+          return userBuilder_.getMessageOrBuilder();
         } else {
-          return u_ == null ?
-              com.berwin.proto.Protobufs.User.getDefaultInstance() : u_;
+          return user_ == null ?
+              com.berwin.proto.Protobufs.User.getDefaultInstance() : user_;
         }
       }
       /**
-       * <code>.User u = 1;</code>
+       * <pre>
+       * 用户信息
+       * </pre>
+       *
+       * <code>.User user = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.berwin.proto.Protobufs.User, com.berwin.proto.Protobufs.User.Builder, com.berwin.proto.Protobufs.UserOrBuilder> 
-          getUFieldBuilder() {
-        if (uBuilder_ == null) {
-          uBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getUserFieldBuilder() {
+        if (userBuilder_ == null) {
+          userBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.berwin.proto.Protobufs.User, com.berwin.proto.Protobufs.User.Builder, com.berwin.proto.Protobufs.UserOrBuilder>(
-                  getU(),
+                  getUser(),
                   getParentForChildren(),
                   isClean());
-          u_ = null;
+          user_ = null;
         }
-        return uBuilder_;
+        return userBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2185,52 +2324,26 @@ public final class Protobufs {
 
     /**
      * <pre>
-     * 匹配的类型
+     * 敌人
      * </pre>
      *
-     * <code>int32 type = 1;</code>
-     */
-    int getType();
-
-    /**
-     * <pre>
-     * 匹配的状态
-     * </pre>
-     *
-     * <code>.MatchStatus status = 2;</code>
-     */
-    int getStatusValue();
-    /**
-     * <pre>
-     * 匹配的状态
-     * </pre>
-     *
-     * <code>.MatchStatus status = 2;</code>
-     */
-    com.berwin.proto.Protobufs.MatchStatus getStatus();
-
-    /**
-     * <pre>
-     * 主场用户
-     * </pre>
-     *
-     * <code>.User enemy = 3;</code>
+     * <code>.User enemy = 1;</code>
      */
     boolean hasEnemy();
     /**
      * <pre>
-     * 主场用户
+     * 敌人
      * </pre>
      *
-     * <code>.User enemy = 3;</code>
+     * <code>.User enemy = 1;</code>
      */
     com.berwin.proto.Protobufs.User getEnemy();
     /**
      * <pre>
-     * 主场用户
+     * 敌人
      * </pre>
      *
-     * <code>.User enemy = 3;</code>
+     * <code>.User enemy = 1;</code>
      */
     com.berwin.proto.Protobufs.UserOrBuilder getEnemyOrBuilder();
   }
@@ -2246,8 +2359,6 @@ public final class Protobufs {
       super(builder);
     }
     private Match() {
-      type_ = 0;
-      status_ = 0;
     }
 
     @java.lang.Override
@@ -2275,18 +2386,7 @@ public final class Protobufs {
               }
               break;
             }
-            case 8: {
-
-              type_ = input.readInt32();
-              break;
-            }
-            case 16: {
-              int rawValue = input.readEnum();
-
-              status_ = rawValue;
-              break;
-            }
-            case 26: {
+            case 10: {
               com.berwin.proto.Protobufs.User.Builder subBuilder = null;
               if (enemy_ != null) {
                 subBuilder = enemy_.toBuilder();
@@ -2322,71 +2422,34 @@ public final class Protobufs {
               com.berwin.proto.Protobufs.Match.class, com.berwin.proto.Protobufs.Match.Builder.class);
     }
 
-    public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
-    /**
-     * <pre>
-     * 匹配的类型
-     * </pre>
-     *
-     * <code>int32 type = 1;</code>
-     */
-    public int getType() {
-      return type_;
-    }
-
-    public static final int STATUS_FIELD_NUMBER = 2;
-    private int status_;
-    /**
-     * <pre>
-     * 匹配的状态
-     * </pre>
-     *
-     * <code>.MatchStatus status = 2;</code>
-     */
-    public int getStatusValue() {
-      return status_;
-    }
-    /**
-     * <pre>
-     * 匹配的状态
-     * </pre>
-     *
-     * <code>.MatchStatus status = 2;</code>
-     */
-    public com.berwin.proto.Protobufs.MatchStatus getStatus() {
-      com.berwin.proto.Protobufs.MatchStatus result = com.berwin.proto.Protobufs.MatchStatus.valueOf(status_);
-      return result == null ? com.berwin.proto.Protobufs.MatchStatus.UNRECOGNIZED : result;
-    }
-
-    public static final int ENEMY_FIELD_NUMBER = 3;
+    public static final int ENEMY_FIELD_NUMBER = 1;
     private com.berwin.proto.Protobufs.User enemy_;
     /**
      * <pre>
-     * 主场用户
+     * 敌人
      * </pre>
      *
-     * <code>.User enemy = 3;</code>
+     * <code>.User enemy = 1;</code>
      */
     public boolean hasEnemy() {
       return enemy_ != null;
     }
     /**
      * <pre>
-     * 主场用户
+     * 敌人
      * </pre>
      *
-     * <code>.User enemy = 3;</code>
+     * <code>.User enemy = 1;</code>
      */
     public com.berwin.proto.Protobufs.User getEnemy() {
       return enemy_ == null ? com.berwin.proto.Protobufs.User.getDefaultInstance() : enemy_;
     }
     /**
      * <pre>
-     * 主场用户
+     * 敌人
      * </pre>
      *
-     * <code>.User enemy = 3;</code>
+     * <code>.User enemy = 1;</code>
      */
     public com.berwin.proto.Protobufs.UserOrBuilder getEnemyOrBuilder() {
       return getEnemy();
@@ -2404,14 +2467,8 @@ public final class Protobufs {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (type_ != 0) {
-        output.writeInt32(1, type_);
-      }
-      if (status_ != com.berwin.proto.Protobufs.MatchStatus.START.getNumber()) {
-        output.writeEnum(2, status_);
-      }
       if (enemy_ != null) {
-        output.writeMessage(3, getEnemy());
+        output.writeMessage(1, getEnemy());
       }
     }
 
@@ -2420,17 +2477,9 @@ public final class Protobufs {
       if (size != -1) return size;
 
       size = 0;
-      if (type_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, type_);
-      }
-      if (status_ != com.berwin.proto.Protobufs.MatchStatus.START.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, status_);
-      }
       if (enemy_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getEnemy());
+          .computeMessageSize(1, getEnemy());
       }
       memoizedSize = size;
       return size;
@@ -2448,9 +2497,6 @@ public final class Protobufs {
       com.berwin.proto.Protobufs.Match other = (com.berwin.proto.Protobufs.Match) obj;
 
       boolean result = true;
-      result = result && (getType()
-          == other.getType());
-      result = result && status_ == other.status_;
       result = result && (hasEnemy() == other.hasEnemy());
       if (hasEnemy()) {
         result = result && getEnemy()
@@ -2466,10 +2512,6 @@ public final class Protobufs {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getType();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
       if (hasEnemy()) {
         hash = (37 * hash) + ENEMY_FIELD_NUMBER;
         hash = (53 * hash) + getEnemy().hashCode();
@@ -2603,10 +2645,6 @@ public final class Protobufs {
       }
       public Builder clear() {
         super.clear();
-        type_ = 0;
-
-        status_ = 0;
-
         if (enemyBuilder_ == null) {
           enemy_ = null;
         } else {
@@ -2635,8 +2673,6 @@ public final class Protobufs {
 
       public com.berwin.proto.Protobufs.Match buildPartial() {
         com.berwin.proto.Protobufs.Match result = new com.berwin.proto.Protobufs.Match(this);
-        result.type_ = type_;
-        result.status_ = status_;
         if (enemyBuilder_ == null) {
           result.enemy_ = enemy_;
         } else {
@@ -2683,12 +2719,6 @@ public final class Protobufs {
 
       public Builder mergeFrom(com.berwin.proto.Protobufs.Match other) {
         if (other == com.berwin.proto.Protobufs.Match.getDefaultInstance()) return this;
-        if (other.getType() != 0) {
-          setType(other.getType());
-        }
-        if (other.status_ != 0) {
-          setStatusValue(other.getStatusValue());
-        }
         if (other.hasEnemy()) {
           mergeEnemy(other.getEnemy());
         }
@@ -2718,127 +2748,25 @@ public final class Protobufs {
         return this;
       }
 
-      private int type_ ;
-      /**
-       * <pre>
-       * 匹配的类型
-       * </pre>
-       *
-       * <code>int32 type = 1;</code>
-       */
-      public int getType() {
-        return type_;
-      }
-      /**
-       * <pre>
-       * 匹配的类型
-       * </pre>
-       *
-       * <code>int32 type = 1;</code>
-       */
-      public Builder setType(int value) {
-        
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 匹配的类型
-       * </pre>
-       *
-       * <code>int32 type = 1;</code>
-       */
-      public Builder clearType() {
-        
-        type_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int status_ = 0;
-      /**
-       * <pre>
-       * 匹配的状态
-       * </pre>
-       *
-       * <code>.MatchStatus status = 2;</code>
-       */
-      public int getStatusValue() {
-        return status_;
-      }
-      /**
-       * <pre>
-       * 匹配的状态
-       * </pre>
-       *
-       * <code>.MatchStatus status = 2;</code>
-       */
-      public Builder setStatusValue(int value) {
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 匹配的状态
-       * </pre>
-       *
-       * <code>.MatchStatus status = 2;</code>
-       */
-      public com.berwin.proto.Protobufs.MatchStatus getStatus() {
-        com.berwin.proto.Protobufs.MatchStatus result = com.berwin.proto.Protobufs.MatchStatus.valueOf(status_);
-        return result == null ? com.berwin.proto.Protobufs.MatchStatus.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * 匹配的状态
-       * </pre>
-       *
-       * <code>.MatchStatus status = 2;</code>
-       */
-      public Builder setStatus(com.berwin.proto.Protobufs.MatchStatus value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        status_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 匹配的状态
-       * </pre>
-       *
-       * <code>.MatchStatus status = 2;</code>
-       */
-      public Builder clearStatus() {
-        
-        status_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.berwin.proto.Protobufs.User enemy_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.berwin.proto.Protobufs.User, com.berwin.proto.Protobufs.User.Builder, com.berwin.proto.Protobufs.UserOrBuilder> enemyBuilder_;
       /**
        * <pre>
-       * 主场用户
+       * 敌人
        * </pre>
        *
-       * <code>.User enemy = 3;</code>
+       * <code>.User enemy = 1;</code>
        */
       public boolean hasEnemy() {
         return enemyBuilder_ != null || enemy_ != null;
       }
       /**
        * <pre>
-       * 主场用户
+       * 敌人
        * </pre>
        *
-       * <code>.User enemy = 3;</code>
+       * <code>.User enemy = 1;</code>
        */
       public com.berwin.proto.Protobufs.User getEnemy() {
         if (enemyBuilder_ == null) {
@@ -2849,10 +2777,10 @@ public final class Protobufs {
       }
       /**
        * <pre>
-       * 主场用户
+       * 敌人
        * </pre>
        *
-       * <code>.User enemy = 3;</code>
+       * <code>.User enemy = 1;</code>
        */
       public Builder setEnemy(com.berwin.proto.Protobufs.User value) {
         if (enemyBuilder_ == null) {
@@ -2869,10 +2797,10 @@ public final class Protobufs {
       }
       /**
        * <pre>
-       * 主场用户
+       * 敌人
        * </pre>
        *
-       * <code>.User enemy = 3;</code>
+       * <code>.User enemy = 1;</code>
        */
       public Builder setEnemy(
           com.berwin.proto.Protobufs.User.Builder builderForValue) {
@@ -2887,10 +2815,10 @@ public final class Protobufs {
       }
       /**
        * <pre>
-       * 主场用户
+       * 敌人
        * </pre>
        *
-       * <code>.User enemy = 3;</code>
+       * <code>.User enemy = 1;</code>
        */
       public Builder mergeEnemy(com.berwin.proto.Protobufs.User value) {
         if (enemyBuilder_ == null) {
@@ -2909,10 +2837,10 @@ public final class Protobufs {
       }
       /**
        * <pre>
-       * 主场用户
+       * 敌人
        * </pre>
        *
-       * <code>.User enemy = 3;</code>
+       * <code>.User enemy = 1;</code>
        */
       public Builder clearEnemy() {
         if (enemyBuilder_ == null) {
@@ -2927,10 +2855,10 @@ public final class Protobufs {
       }
       /**
        * <pre>
-       * 主场用户
+       * 敌人
        * </pre>
        *
-       * <code>.User enemy = 3;</code>
+       * <code>.User enemy = 1;</code>
        */
       public com.berwin.proto.Protobufs.User.Builder getEnemyBuilder() {
         
@@ -2939,10 +2867,10 @@ public final class Protobufs {
       }
       /**
        * <pre>
-       * 主场用户
+       * 敌人
        * </pre>
        *
-       * <code>.User enemy = 3;</code>
+       * <code>.User enemy = 1;</code>
        */
       public com.berwin.proto.Protobufs.UserOrBuilder getEnemyOrBuilder() {
         if (enemyBuilder_ != null) {
@@ -2954,10 +2882,10 @@ public final class Protobufs {
       }
       /**
        * <pre>
-       * 主场用户
+       * 敌人
        * </pre>
        *
-       * <code>.User enemy = 3;</code>
+       * <code>.User enemy = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.berwin.proto.Protobufs.User, com.berwin.proto.Protobufs.User.Builder, com.berwin.proto.Protobufs.UserOrBuilder> 
@@ -3558,17 +3486,19 @@ public final class Protobufs {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027examples/transfer.proto\"P\n\014TransferDat" +
-      "a\022\023\n\013messageName\030\001 \001(\t\022\035\n\terrorCode\030\002 \001(" +
-      "\0162\n.ErrorCode\022\014\n\004data\030\003 \001(\014\"(\n\004User\022\016\n\006u" +
-      "serId\030\001 \001(\005\022\020\n\010userName\030\002 \001(\t\"\031\n\005Login\022\020" +
-      "\n\001u\030\001 \001(\0132\005.User\"I\n\005Match\022\014\n\004type\030\001 \001(\005\022" +
-      "\034\n\006status\030\002 \001(\0162\014.MatchStatus\022\024\n\005enemy\030\003" +
-      " \001(\0132\005.User\" \n\006Gaming\022\n\n\002ex\030\001 \001(\005\022\n\n\002ey\030" +
-      "\002 \001(\005*%\n\tErrorCode\022\013\n\007DEFAULT\020\000\022\013\n\007SUCCE" +
-      "SS\020\001*2\n\013MatchStatus\022\t\n\005START\020\000\022\013\n\007MATCHE" +
-      "D\020\001\022\013\n\007TIMEOUT\020\002B\035\n\020com.berwin.protoB\tPr",
-      "otobufsb\006proto3"
+      "\n\027examples/transfer.proto\"5\n\014TransferDat" +
+      "a\022\027\n\006action\030\001 \001(\0162\007.Action\022\014\n\004data\030\002 \001(\014" +
+      "\"Y\n\004User\022\016\n\006userId\030\001 \001(\005\022\020\n\010userName\030\002 \001" +
+      "(\t\022\020\n\010passWord\030\003 \001(\t\022\r\n\005score\030\004 \001(\005\022\016\n\006v" +
+      "erify\030\005 \001(\010\"\034\n\005Login\022\023\n\004user\030\001 \001(\0132\005.Use" +
+      "r\"\035\n\005Match\022\024\n\005enemy\030\001 \001(\0132\005.User\" \n\006Gami" +
+      "ng\022\n\n\002ex\030\001 \001(\005\022\n\n\002ey\030\002 \001(\005*\277\001\n\006Action\022\022\n" +
+      "\016ACTION_CONNECT\020\000\022\021\n\rACTION_CLOSED\020\001\022\020\n\014" +
+      "ACTION_LOGIN\020\002\022\020\n\014ACTION_MATCH\020\003\022\027\n\023ACTI" +
+      "ON_MATCH_CANCEL\020\004\022\027\n\023ACTION_MATCH_FAILED",
+      "\020\005\022\022\n\016ACTION_MATCHED\020\006\022\021\n\rACTION_GAMING\020" +
+      "\007\022\021\n\rACTION_GAMEND\020\010B\035\n\020com.berwin.proto" +
+      "B\tProtobufsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3587,25 +3517,25 @@ public final class Protobufs {
     internal_static_TransferData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TransferData_descriptor,
-        new java.lang.String[] { "MessageName", "ErrorCode", "Data", });
+        new java.lang.String[] { "Action", "Data", });
     internal_static_User_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_User_descriptor,
-        new java.lang.String[] { "UserId", "UserName", });
+        new java.lang.String[] { "UserId", "UserName", "PassWord", "Score", "Verify", });
     internal_static_Login_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_Login_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Login_descriptor,
-        new java.lang.String[] { "U", });
+        new java.lang.String[] { "User", });
     internal_static_Match_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_Match_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Match_descriptor,
-        new java.lang.String[] { "Type", "Status", "Enemy", });
+        new java.lang.String[] { "Enemy", });
     internal_static_Gaming_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_Gaming_fieldAccessorTable = new
